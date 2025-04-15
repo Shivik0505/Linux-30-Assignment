@@ -1,0 +1,71 @@
+Last login: Tue Mar 25 19:06:59 on ttys001
+shivam1355@Shivams-MacBook-Air Desktop % pwd
+/Users/shivam1355/Desktop
+shivam1355@Shivams-MacBook-Air Desktop % mkdir linux
+mkdir linux/Assignment-01
+mkdir /tmp/dir1
+mkdir -p /tmp/{dir1,dir2,dir3}  # Single command to create multiple directories
+mkdir: linux: File exists
+mkdir: linux/Assignment-01: File exists
+mkdir: /tmp/dir1: File exists
+shivam1355@Shivams-MacBook-Air Desktop % rm -r /tmp/dir3
+shivam1355@Shivams-MacBook-Air Desktop % touch /tmp/shivam  # Replace "shivam" with your first name
+shivam1355@Shivams-MacBook-Air Desktop % echo "This is my first line" > /tmp/shivam
+shivam1355@Shivams-MacBook-Air Desktop % echo "this is an additional content" >> /tmp/shivam
+shivam1355@Shivams-MacBook-Air Desktop % echo "Vikhar is my last name" > /tmp/vikhar                                        
+shivam1355@Shivams-MacBook-Air Desktop % echo "this is line at the beginning" | cat - /tmp/vikhar > /tmp/temp && mv /tmp/temp /tmp/vikhar
+shivam1355@Shivams-MacBook-Air Desktop % echo "this is line at the beginning" | cat - /tmp/vikhar > /tmp/temp && mv /tmp/temp /tmp/vikhar
+shivam1355@Shivams-MacBook-Air Desktop % for i in {1..10}; do echo "This is line number $i" >> /tmp/vikhar; done\
+for> for i in {1..10}; do echo "This is line number $i" >> /tmp/vikhar; done
+zsh: parse error near `do'
+shivam1355@Shivams-MacBook-Air Desktop % for i in {1..10}; do echo "This is line number $i" >> /tmp/vikhar; done
+shivam1355@Shivams-MacBook-Air Desktop % head -n 5 /tmp/vikhar    # Top 5 lines
+tail -n 2 /tmp/vikhar    # Bottom 2 lines
+sed -n '6p' /tmp/vikhar  # Only 6th line
+sed -n '3,8p' /tmp/vikhar  # 3rd to 8th line
+==> /tmp/vikhar <==
+this is line at the beginning
+this is line at the beginning
+Vikhar is my last name
+This is line number 1
+This is line number 2
+
+==> # <==
+head: Error reading #
+head: Top: No such file or directory
+head: 5: No such file or directory
+head: lines: No such file or directory
+==> /tmp/vikhar <==
+This is line number 9
+This is line number 10
+
+==> # <==
+tail: Bottom: No such file or directory
+tail: 2: No such file or directory
+tail: lines: No such file or directory
+This is line number 3
+sed: Only: No such file or directory
+sed: 6th: No such file or directory
+sed: line: No such file or directory
+Vikhar is my last name
+This is line number 1
+This is line number 2
+This is line number 3
+This is line number 4
+This is line number 5
+sed: 3rd: No such file or directory
+sed: 8th: No such file or directory
+sed: line: No such file or directory
+shivam1355@Shivams-MacBook-Air Desktop % ls -la /tmp      # List all content (including hidden files)
+find /tmp -maxdepth 1 -type f  # List only files
+find /tmp -maxdepth 1 -type d  # List only directories
+zsh: unknown file attribute: i
+find: #: unknown primary or operator
+find: #: unknown primary or operator
+shivam1355@Shivams-MacBook-Air Desktop % cp /tmp/vikhar /tmp/dir2/
+shivam1355@Shivams-MacBook-Air Desktop % cp /tmp/vikhar /tmp/dir2/vikhar.copy
+shivam1355@Shivams-MacBook-Air Desktop % mv /tmp/shivam /tmp/shivam_renamed                                         
+shivam1355@Shivams-MacBook-Air Desktop % mv /tmp/vikhar /tmp/dir1/
+shivam1355@Shivams-MacBook-Air Desktop % truncate -s 0 /tmp/dir2/vikhar.copy
+shivam1355@Shivams-MacBook-Air Desktop % rm /tmp/dir2/vikhar.copy
+shivam1355@Shivams-MacBook-Air Desktop % 
